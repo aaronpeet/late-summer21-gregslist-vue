@@ -3,9 +3,8 @@
     <div class="JobHome container-fluid">
      <div class="row">
          <div class="col-md-4" v-for="j in jobs" :key="j.id">
-    
+         <JobCard :job="j"/>
          </div>
-         {{jobs}}
      </div>
     </div>
 </template>
@@ -13,6 +12,7 @@
 import { computed, onMounted } from '@vue/runtime-core'
 import { AppState } from '../AppState.js'
 import { jobsService } from '../services/JobsService.js'
+import JobCard from '../components/JobCard.vue'
 
 export default {
   name: 'JobHome',
@@ -33,6 +33,9 @@ export default {
       jobs: computed(()=> AppState.jobs)
       // methods
     }
+  },
+  components: {
+      JobCard
   }
 
 }

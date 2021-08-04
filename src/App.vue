@@ -42,7 +42,7 @@
   </footer>
 </template>
 
-<style lang="scss">
+<style>
 #app {
   min-height: 100vh;
   display: flex;
